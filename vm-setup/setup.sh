@@ -24,6 +24,20 @@ sudo mkdir -p /etc/gdm3
 echo "[daemon]
 AutomaticLoginEnable = true
 AutomaticLogin = $USER" | sudo tee /etc/gdm3/custom.conf >/dev/null
+# Disable animations that are laggy over RDP
+gsettings set org.gnome.settings-daemon.plugins.remote-display active false
+gsettings set org.gnome.desktop.interface enable-animations false
+
+# Download Software
+sudo snap install chromium
+sudo apt install nautilus -y
+
+# Add easy access icons
+gsettings set org.gnome.shell favorite-apps "['chromium_chromium.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']"
+cp /var/lib/snapd/desktop/applications/chromium_chromium.desktop ~/Desktop/
+cp /usr/share/applications/org.gnome.Nautilus.desktop ~/Desktop/
+cp /usr/share/applications/org.gnome.Terminal.desktop ~/Desktop/
+
 
 # Set CyberSoc Branding
 # Desktop Background
