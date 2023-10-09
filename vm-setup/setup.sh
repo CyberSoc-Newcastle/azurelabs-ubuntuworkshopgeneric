@@ -50,7 +50,7 @@ cp "$parent_path"/desktop.png ~/Pictures/CyberSoc/desktop.png
 gsettings set org.gnome.desktop.background picture-uri-dark file://"$(readlink -f ~/Pictures)"/CyberSoc/desktop.png
 gsettings set org.gnome.desktop.background picture-uri file://"$(readlink -f ~/Pictures)"/CyberSoc/desktop.png
 
-$startup_service="[Unit]
+startup_service="[Unit]
 Description=Run startup script to check in with VM repo
 
 [Service]
@@ -64,7 +64,7 @@ echo "$startup_service" | sudo tee -a /etc/systemd/system/cybersoc-startupscript
 sudo systemctl daemon-reload
 sudo systemctl enable cybersoc-startupscript
 
-$gnome="[Desktop Entry]
+gnome="[Desktop Entry]
 Name=CyberSocGnomeStartScript
 GenericName=CyberSoc Gnome Start Script
 Comment=Run gnome start script to check in with VM repo
