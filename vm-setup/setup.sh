@@ -31,9 +31,11 @@ gsettings set org.gnome.desktop.interface enable-animations false
 # Download Software
 sudo snap install chromium
 sudo apt install nautilus -y
+curl -fsSL https://tailscale.com/install.sh | sh
 
 # Add easy access icons
 gsettings set org.gnome.shell favorite-apps "['chromium_chromium.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']"
+mkdir -p ~/Desktop/
 cp /var/lib/snapd/desktop/applications/chromium_chromium.desktop ~/Desktop/
 cp /usr/share/applications/org.gnome.Nautilus.desktop ~/Desktop/
 cp /usr/share/applications/org.gnome.Terminal.desktop ~/Desktop/
