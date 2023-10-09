@@ -77,5 +77,8 @@ echo "$gnome" > ~/.config/autostart/CyberSocGnomeStartScript.desktop
 
 echo "source $(readlink -f -- "$parent_path/../scripts/on-bash-start.sh")" >> ~/.bashrc
 
+sudo systemctl set-default multi-user.target
+
 # Done!
 touch ~/.cybersoc/.vm_setup_complete
+sudo reboot
